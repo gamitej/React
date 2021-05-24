@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+const App = () => {
+  const [a, setA] = useState("");
+  const [get, setGet] = useState([]);
+  const [id, setId] = useState();
+  const [show, setShow] = useState(true);
 
-function App() {
+  const url = `https://jsonplaceholder.typicode.com/albums?userId=${id}`;
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setGet(data);
+
+        // to hide unhide search bar
+        if(id>0){
+          setShow(false)
+        }
+        else{
+          setShow(true)
+        }
+      });
+  }, [id]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="enter">
+        <input
+          type="text"
+          value={id}
+          placeholder="Enter Id"
+          onChange={(e)=>setId(e.target.value)}
+        />
+      </div>
+      {show ? (
+        ""
+      ) : (
+        <div className="enter">
+          <input
+            type="text"
+            placeholder="Enter Charater To Search"
+            onChange={(e) => setA(e.target.value)}
+          />
+        </div>
+      )}
+      <div className="text">
+        {get
+          .filter((val) => {
+            if (a === "") {
+              return val;
+            } else if (
+              val.title.split(" ")[0].toLowerCase().startsWith(a.toLowerCase())
+            )
+              return val;
+          })
+          .map((p) => (
+            <p key={p.id}>{p.title}</p>
+          ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
