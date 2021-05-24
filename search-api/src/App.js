@@ -13,11 +13,10 @@ const App = () => {
         setGet(data);
 
         // to hide unhide search bar
-        if(id>0){
-          setShow(false)
-        }
-        else{
-          setShow(true)
+        if (id > 0) {
+          setShow(false);
+        } else {
+          setShow(true);
         }
       });
   }, [id]);
@@ -29,20 +28,22 @@ const App = () => {
           type="text"
           value={id}
           placeholder="Enter Id"
-          onChange={(e)=>setId(e.target.value)}
+          onChange={(e) => setId(e.target.value)}
         />
       </div>
-      {show ? (
-        ""
-      ) : (
-        <div className="enter">
-          <input
-            type="text"
-            placeholder="Enter Charater To Search"
-            onChange={(e) => setA(e.target.value)}
-          />
-        </div>
-      )}
+      <div className='inside'>
+        {show ? (
+          ""
+        ) : (
+          <div className="enter">
+            <input
+              type="text"
+              placeholder="Enter Charater To Search"
+              onChange={(e) => setA(e.target.value)}
+            />
+          </div>
+        )}
+     
       <div className="text">
         {get
           .filter((val) => {
@@ -56,6 +57,7 @@ const App = () => {
           .map((p) => (
             <p key={p.id}>{p.title}</p>
           ))}
+      </div>
       </div>
     </div>
   );
