@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
+import { IoMdRefreshCircle } from 'react-icons/io';
 
 const arr = [
   {
@@ -58,27 +59,41 @@ const App = () => {
       setShow(true);
     }
   };
-
   const Sam = () => {
     setStart(false);
   };
+  const Icon=()=>{
+    setQ(0)
+    setStart(true)
+    setShow(false)
+    setScore(0)
+  }
 
   return (
     <>
       <div className="main">
         {start ? (
-          <h1 onClick={Sam}
-          className='heading'
-          style={{
-            cursor:'pointer'
-          }}
-          >Start The Quiz</h1>
+          <h1
+            onClick={Sam}
+            className="heading"
+            style={{
+              cursor: "pointer",
+            }}
+          >
+            Start The Quiz
+          </h1>
         ) : (
           <>
             {show ? (
-              <h1>
-                Your Score is : {score}/{arr.length}
-              </h1>
+              <>
+                <h1 className="result">
+                  Your Score is : {score}/{arr.length}
+                </h1>
+                <IoMdRefreshCircle
+                className='icon'
+                onClick={Icon}
+                />
+            </>
             ) : (
               <>
                 <div className="que-area">
