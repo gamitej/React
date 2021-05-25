@@ -1,0 +1,51 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+
+body{
+  background: linear-gradient(to right,#ff33cc,#ffcc66);
+}
+.main{
+  border: 3px solid black;
+  width:400px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left:35%;
+  margin-top:15%;
+  background: linear-gradient(to right, #33ccff , #ff99cc);
+  border-radius: 30px;
+  padding: 2%;
+  text-align: center;
+}
+
+.que-area{
+  color: #000;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 5%;
+}
+
+.option-area{
+  margin-bottom: 20px;
+  display:flex;
+  flex-direction: column;
+  color:black;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.option-area button{
+  border: none;
+  margin-top:10px;
+  width: 160px;
+  height: 30px;
+  background-color: lightgreen;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.option-area button:hover{
+    background:lightseagreen; 
+}
