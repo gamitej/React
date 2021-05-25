@@ -68,6 +68,7 @@ const App = () => {
       <div className="main">
         {start ? (
           <h1 onClick={Sam}
+          className='heading'
           style={{
             cursor:'pointer'
           }}
