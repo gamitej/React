@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: auto;
-  margin-top: 8rem;
+  margin-top: 10rem;
   margin-bottom: 8%;
 }
 .main {
@@ -91,11 +91,17 @@ body {
   html{
     font-size: .8rem; 
   }
+  .flex{
+    margin-top: 15rem;
+  }
 }
 
 @media screen and (max-width:450px){
   html{
     font-size: .6rem;
+  }
+  .flex{
+    margin-top: 22rem;
   }
     
 }
@@ -104,5 +110,8 @@ body {
   html{
     font-size: .4rem;
   }
-      
+  .flex{
+    margin-top: 35rem;
+  }
+    
 }
