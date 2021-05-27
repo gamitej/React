@@ -8,7 +8,7 @@ html{
 }
 
 body {
-  background-color: lightpink;
+  background-color: lightcyan;
 }
 
 .flex {
@@ -18,6 +18,12 @@ body {
   margin: auto;
   margin-top: 10rem;
   margin-bottom: 8%;
+}
+
+.heading {
+  font-size:2rem;
+  margin-bottom: 7rem;
+  font-family: 'Pacifico', cursive;
 }
 
 .input-btn{
@@ -43,30 +49,32 @@ body {
 }
 
 .refresh:hover{
-  color:red;
+  color:lightgray;
 }
 .main {
   border: 0.2rem solid black;
   padding: 1rem;
-  width: 23rem;
+  width: 22rem;
   background-color: whitesmoke;
   margin-top: 2rem;
   border-radius: .5rem;
+  font-family: 'Pacifico', cursive;
 }
 
 .box {
   display: flex;
   border: 0.1rem solid black;
   width: 20rem;
-  padding: 1rem;
+  padding: .8rem;
   margin-bottom: 0.5rem;
-  background-color: lightsalmon;
+  background-color: lightcoral;
   border-radius: 1rem;
+  font-family: 'Pacifico', cursive;
 }
 
 .box p {
   margin-left: 2rem;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 .btn button {
@@ -83,16 +91,10 @@ body {
 }
 
 .btn button:hover{
-  background-color: lightblue;
+  background-color: lightpink;
+  
 }
 
-/* .btn button:not(:focus):hover {
-  background-color: lightskyblue;
-  border-radius: 1rem;
-}
-.btn button:focus{
-  outline: none;
-} */
 .alert {
   text-transform: uppercase;
   text-align: center;
@@ -109,7 +111,7 @@ body {
   position: fixed;
 }
 .remove:hover {
-  background-color: red;
+  background-color: lightseagreen;
 }
 
 .remove p {
