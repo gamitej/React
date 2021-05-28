@@ -2,15 +2,21 @@ import "./App.css";
 import React, { useState } from "react";
 import { FiRefreshCcw } from "react-icons/fi";
 
+
 export default function App() {
   const [val, setVal] = useState([]);
   const [i, setI] = useState(1);
   const [sub, setSub] = useState("");
 
   const Add = () => {
+    if (sub===""){
+      alert("Input Field Can't be empty")
+    }
+    else{
     setI(i + 1);
     setVal([...val, { id: i, f: sub }]);
     setSub("");
+    }
   };
 
   const Remove = (index) => {
@@ -19,7 +25,6 @@ export default function App() {
   };
 
   const Upload = (e) => {
-    e.preventDefault();
     setSub(e.target.value);
   };
 
