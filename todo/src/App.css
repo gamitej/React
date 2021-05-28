@@ -24,6 +24,7 @@ body {
   font-size:2rem;
   margin-bottom: 7rem;
   font-family: 'Pacifico', cursive;
+  text-decoration: underline;
 }
 
 .input-btn{
@@ -103,20 +104,14 @@ body {
 
 .remove {
   cursor: pointer;
-  border: 0.1rem solid black;
   margin-left: 18rem;
   text-align: center;
   border-radius: 1rem;
-  background-color: whitesmoke;
-  position: fixed;
+  position: absolute;
+  font-size: 1.2rem;
 }
 .remove:hover {
-  background-color: lightseagreen;
-}
-
-.remove p {
-  margin-left: 0rem;
-  padding: 0.1rem 0.3rem;
+  color: whitesmoke;
 }
 
 

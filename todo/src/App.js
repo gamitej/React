@@ -1,6 +1,9 @@
 import "./App.css";
 import React, { useState } from "react";
 import { FiRefreshCcw } from "react-icons/fi";
+import { AiOutlineDelete } from "react-icons/ai";
+import  Flipmove  from "react-flip-move";
+import { Typewriter } from 'react-typewriting-effect';
 
 
 export default function App() {
@@ -9,13 +12,12 @@ export default function App() {
   const [sub, setSub] = useState("");
 
   const Add = () => {
-    if (sub===""){
-      alert("Input Field Can't be empty")
-    }
-    else{
-    setI(i + 1);
-    setVal([...val, { id: i, f: sub }]);
-    setSub("");
+    if (sub === "") {
+      alert("Input Field Can't be empty");
+    } else {
+      setI(i + 1);
+      setVal([...val, { id: i, f: sub }]);
+      setSub("");
     }
   };
 
@@ -35,7 +37,11 @@ export default function App() {
   return (
     <div className="flex">
       <div className="heading">
-        <ins> TODO </ins>
+        <Typewriter
+            string='TODO APP'
+             delay={100}
+             stopBlinkinOnComplete
+        />
       </div>
       <div className="input-btn">
         <div className="input">
@@ -54,21 +60,28 @@ export default function App() {
         />
       </div>
       <div className="main">
+      <Flipmove duration={300} easing='ease-in-out'>
         {val.length !== 0 ? (
           val.map((p) => (
-            <div className="box" key={p.id}>
-              <p style={{
-                textTransform:'uppercase'
-              }}> {p.f}</p>
-              <div className="remove">
-                <p onClick={() => Remove(p.id)}> X </p>
+              <div className="box" key={p.id}>
+                <p
+                  style={{
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {" "}
+                  {p.f}{" "}
+                </p>
+                <div className="remove">
+                  <AiOutlineDelete onClick={() => Remove(p.id)} />
+                </div>
+                <br />
               </div>
-              <br />
-            </div>
           ))
         ) : (
           <h3 className="alert">nothing to-do </h3>
         )}
+        </Flipmove>
       </div>
     </div>
   );
