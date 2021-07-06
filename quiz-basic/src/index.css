@@ -47,18 +47,11 @@ body{
   outline: none;
 }
 
-/* .option-area button:hover{
-    background-color:lightseagreen; 
-} */
 
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover){
   .option-area button:hover { 
-      ackground-color:lightseagreen;
+      background-color:rgb(39, 51, 50);
   }
-}
-
-.option-are button:focus{
-  outline: none;
 }
 
 .icon{

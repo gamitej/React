@@ -124,6 +124,16 @@ body {
   }
 }
 
+@media (orientation: landscape){  
+  html{
+    font-size: .7rem; 
+  }
+  .flex{
+    margin-top: 10rem;
+  }
+}
+
+
 @media screen and (max-width:450px){
   html{
     font-size: .6rem;
